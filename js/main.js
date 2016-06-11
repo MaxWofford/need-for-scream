@@ -4,7 +4,7 @@ var fb = new Firebase("https://need-for-scream.firebaseio.com/");
 
 var getVolume = function() {
   // Returns a smoothed microphone volum
-  if (volumeArray.push(mic.getLevel()) > 20) {
+  if (volumeArray.push(mic.getLevel()) > 120) {
     volumeArray.splice(0, 1);
   }
   var sum = 0;
@@ -27,8 +27,6 @@ function setup() {
   player.rotateToDirection = true;
   player.maxSpeed = 6;
   player.friction = .98;
-  player.velocity.x = 0;
-  player.velocity.y = 0;
   player.move = {
     forward: function(v) {
       player.addSpeed(v * player.maxSpeed, player.rotation);
@@ -119,6 +117,15 @@ if (!('webkitSpeechRecognition' in window)) {
         interim_transcript += event.results[i][0].transcript;
       }
     }
+    if (final_transcript.match(/forward/)) {
+      player.move.forward(getVolume());
+    }
+    if (final_transcript.match(/right/)) {
+      player.move.right(getVolume());
+    }
+    if (final_transcript.match(/left/)) {
+      player.move.left(getVolume());
+    }
     final_span.innerHTML = linebreak(final_transcript);
     interim_span.innerHTML = linebreak(interim_transcript);
     if (final_transcript || interim_transcript) {
@@ -175,23 +182,4 @@ function showButtons(style) {
     return;
   }
   current_style = style;
-}
-
-function moveLeft() {
-  if (final_span.innerHTML = 'left') {
-
-  }
-}
-
-function moveForward() {
-  if (final_span.innerHTML = 'forward') {
-
-  }
-
-}
-
-function moveRight() {
-  if (final_span.innerHTML = 'right') {
-
-  }
 }
