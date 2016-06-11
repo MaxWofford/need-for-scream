@@ -2,27 +2,31 @@
 <html>
   <head>
     <title>Need for scream</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <style>
+     html, body, canvas {
+       margin: 0;
+       padding: 0;
+     }
+     #recognized-text {
+       font-size: 5.7vw;
+       color: rgba;
+       position: fixed;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%,-50%);
+       color: white;
+       opacity: 0.1;
+       margin: 0;
+       padding: 0;
+       font-family: 'Roboto', sans-serif;
+       font-weight: 100;
+     }
+    </style>
   </head>
   <body>
-   <div id="info">
-	  <p id="info_start">Click on the microphone icon and begin speaking.</p>
-	  <p id="info_speak_now">Speak now.</p>
-	  <p id="info_no_speech">No speech was detected</p>
-	  <p id="info_no_microphone">No microphone was found.</p>
-	  <p id="info_allow">Click the "Allow" button above to enable your microphone.</p>
-	  <p id="info_denied">Permission to use microphone was denied.</p>
-	  <p id="info_blocked">Permission to use microphone is blocked.</p>
-	</div>
-	<div class="right">
-	  <button id="start_button" onclick="startButton(event)">
-	    <img id="start_img" src="mic.gif" alt="Start"></button>
-	</div>
-	<div id="results">
-	  <span id="final_span" class="final"></span>
-	  <span id="interim_span" class="interim"></span>
-	  <p>
-	</div>
+    <h1 id="recognized-text">need for scream</h1>
     <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <script type="text/javascript" src="js/p5.min.js"></script>
     <script type="text/javascript" src="js/p5.play.js"></script>
