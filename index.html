@@ -102,7 +102,6 @@
 		        interim_transcript += event.results[i][0].transcript;
 		      }
 		    }
-		    final_transcript = capitalize(final_transcript);
 		    final_span.innerHTML = linebreak(final_transcript);
 		    interim_span.innerHTML = linebreak(interim_transcript);
 		    if (final_transcript || interim_transcript) {
@@ -120,9 +119,7 @@
 		}
 
 		var first_char = /\S/;
-		function capitalize(s) {
-		  return s.replace(first_char, function(m) { return m.toUpperCase(); });
-		}
+		
 
 
 
@@ -162,6 +159,27 @@
 		  }
 		  current_style = style;
 		}
+
+		function moveLeft() { 
+			if (final_span.innerHTML = 'left') {
+
+			}
+		}
+
+		function moveForward() {
+			if (final_span.innerHTML = 'forward') {
+				
+			}
+
+		}
+
+		function moveRight() {
+			if (final_span.innerHTML = 'right') {
+				
+			}
+
+		}
+
 	</script>
 
   </body>
